@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Series voices",
+  "description": "Locked per-character voices for a series (shared/voices/voices.json). See lib/series.py.",
+  "type": "object",
+  "required": ["version", "series_id", "voices"],
+  "properties": {
+    "version": {"type": "string"},
+    "series_id": {"type": "string"},
+    "voices": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["provider", "voice_id"],
+        "properties": {
+          "provider": {"type": "string", "description": "Registry tool name, e.g. elevenlabs_tts."},
+          "voice_id": {"type": "string"},
+          "model": {"type": "string"},
+          "settings": {"type": "object", "description": "Provider params to pass unchanged every episode (stability, style, speed, seed...)."},
+          "sample": {"type": "string", "description": "Absolute path to the approved reference sample."},
+          "notes": {"type": "string"},
+          "updated_at": {"type": "string"}
+        }
+      }
+    }
+  }
+}

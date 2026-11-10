@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Series",
+  "description": "Multi-episode series home (projects/_series/<id>/series.json). See lib/series.py.",
+  "type": "object",
+  "required": ["version", "series_id", "title", "seasons", "episodes"],
+  "properties": {
+    "version": {"type": "string"},
+    "series_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
+    "title": {"type": "string", "minLength": 1},
+    "logline": {"type": "string"},
+    "style_playbook": {"type": "string"},
+    "pipeline_type": {"type": "string"},
+    "created_at": {"type": "string"},
+    "seasons": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["number"],
+        "properties": {
+          "number": {"type": "integer", "minimum": 1},
+          "title": {"type": "string"},
+          "description": {"type": "string", "description": "Series-relative path to the season bible (.md)."},
+          "script": {"type": "string", "description": "Series-relative path to the season script (.md)."}
+        }
+      }
+    },
+    "episodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["season", "episode", "code", "project_id", "title"],
+        "properties": {
+          "season": {"type": "integer", "minimum": 1},
+          "episode": {"type": "integer", "minimum": 1},
+          "code": {"type": "string", "pattern": "^s[0-9]{2,}e[0-9]{2,}$"},
+          "project_id": {"type": "string"},
+          "title": {"type": "string"}
+        }
+      }
+    }
+  }
+}
