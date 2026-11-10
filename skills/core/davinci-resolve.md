@@ -110,6 +110,17 @@ Prepared media (stills → H.264 clips, AAC/MP3 → PCM WAV) is cached under
 
 ## Setup and troubleshooting
 
+Requires Resolve **Studio** with Preferences > System > General > External
+scripting using = Local. Optional env (set in `.env`):
+
+| Variable | Default | Meaning |
+|---|---|---|
+| `RESOLVE_RUNNER` | `auto` | `auto` \| `native` \| `podman` \| `docker` (container installs, e.g. davincibox) |
+| `RESOLVE_CONTAINER` | `davincibox` | container name for podman/docker runners |
+| `RESOLVE_PYTHON` | `python3` | interpreter that can load `fusionscript` |
+| `RESOLVE_LAUNCH_COMMAND` | — | command that starts Resolve, used with `launch_if_needed: true` |
+| `RESOLVE_LUT_DIR` | auto | Resolve master LUT folder, if not in a standard location |
+
 | Symptom | Fix |
 |---|---|
 | `status` → tool unavailable | Resolve Studio not found. Native installs are auto-detected; for distrobox/podman set `RESOLVE_RUNNER=podman`, `RESOLVE_CONTAINER=<name>` |
