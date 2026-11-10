@@ -63,6 +63,7 @@ Key capability families to look for in the output:
 | `3d_asset_acquisition` | — | Rights-safe local GLTF/GLB catalogs and provenance |
 | `3d_asset_generation` | — | Atlas/fal textured mesh generation and reconstruction for unique scene assets |
 | `3d_world_rendering` | — | Blender assembly and production rendering of detailed worlds |
+| `nle_finishing` | — | DaVinci Resolve Studio timeline hand-off, LUT grading and Resolve renders |
 | `graphics` | — | Local rendering tools |
 | `music_library` | — | Discovers user-provided local tracks |
 | `music_search` | — | Discovers royalty-free search/download providers |
@@ -92,6 +93,7 @@ Key capability families to look for in the output:
 | Azure TTS | (tool: `azure_tts`) | Optional cloud neural narration (SSML prosody, express-as styles) — same Speech key as `azure_stt` | `azure-text-to-speech` |
 | Subtitle Sync | `core/subtitle-sync.md` | Subtitle timing and alignment | `remotion-best-practices` |
 | Color Grading | `core/color-grading.md` | FFmpeg color profiles, LUT workflow, accessibility | `ffmpeg` |
+| DaVinci Resolve | `core/davinci-resolve.md` | Resolve Studio hand-off: timeline from edit_decisions, LUTs, Resolve renders, track layout, API limits | `davinci-resolve` |
 
 ## Creative Skills
 
